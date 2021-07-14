@@ -1,14 +1,15 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 function Navbar() {
     return (
         <div>
         <nav>
         <div className="nav-wrapper indigo darken-4">
-          <a href="#" className="brand-logo left blue-text">HC STORE</a>
+          <Link to="/" className="brand-logo left blue-text">Hiring Coders STORE</Link>
           <ul id="nav-mobile" className="right hide-on-lg-and-down">
-            <li><a href="sass.html">Promoções</a></li>
-            <li><a href="collapsible.html">Cadastro</a></li>
+            <li><Link to="/">Promoções</Link></li>
+            <li><Link to="/subscribe">Cadastro</Link></li>
           </ul>
         </div>
       </nav> 
