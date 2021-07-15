@@ -7,7 +7,7 @@ const Offers = function () {
     return (
         <div>
             <TitleDiv>
-                <H3>Principais Ofertas</H3>
+                <h3>Principais Ofertas</h3>
                 <Link to="/subscribe">
                     <SubsBtn className="btn waves-effect green darken-1">
                         Inscreva-se e receba ofertas no seu email!
@@ -32,6 +32,7 @@ const Offers = function () {
 }
 
 const MainDiv = styled.div`
+    display: flex;
     text-align: center;
     display: flex;
     align-items: center;
@@ -41,10 +42,6 @@ const MainDiv = styled.div`
 const TitleDiv = styled.div`
     display: flex;
 
-`
-
-const H3 = styled.h3`
-    min-width: 350px;
 `
 
 const SubsBtn = styled.button`
