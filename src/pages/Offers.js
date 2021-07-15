@@ -17,7 +17,6 @@ const Offers = function () {
             <MainDiv>
                 {
                     Data.map(((product, index) => {
-                        var strImg = `../img/product${index}.jpg`
                         return (
                             <Card key={product.name}>
                                 <img src={product.img} />
