@@ -33,10 +33,6 @@ const Offers = function () {
 
 const MainDiv = styled.div`
     display: flex;
-    flex-direction: row;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
 `
 
 const TitleDiv = styled.div`
