@@ -16,7 +16,7 @@ const Data = [
     },
     {
         name:"Samsung Galaxy M12   Smartphone Samsung Galaxy M12, equipado com C&aci..",
-        price:"R$ 1.709,05",
+        price:"1.709,05",
         img: "https://images6.kabum.com.br/produtos/fotos/155486/smartphone-samsung-galaxy-m12-64gb-4gb-ram-octa-core-camera-quadrupla-5000mah-preto-sm-m127fzkszto_1622118086_m.jpg"
     }
   

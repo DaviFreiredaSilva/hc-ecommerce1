@@ -19,9 +19,9 @@ const Offers = function () {
                     Data.map(((product, index) => {
                         return (
                             <Card key={product.name}>
-                                <img src={product.img} />
+                                <img alt={product.price} src={product.img} />
                                 <p>{product.name}</p>
-                                <h4>{product.price}</h4>
+                                <h4>R$ {product.price}</h4>
                             </Card>
                         )
                     }))
