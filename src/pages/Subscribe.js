@@ -22,10 +22,12 @@ function Subscribe() {
         <MainDiv>
            <h2>Inscreva-se</h2> 
            <div className="input-field col s6">
-           <input placeholder="Nome:" onChange={e=> setName(e.target.value)}/>
+           <label for="name">Nome: </label>
+           <input id="name" onChange={e=> setName(e.target.value)}/>
            </div>
            <div className="input-field col s6">
-           <input type="email" placeholder="Email:" onChange={e=> setEmail(e.target.value)}/>
+           <label for="name">Email: : </label>
+           <input type="email" id="email" onChange={e=> setEmail(e.target.value)}/>
            </div>
            <button 
            className="btn"
