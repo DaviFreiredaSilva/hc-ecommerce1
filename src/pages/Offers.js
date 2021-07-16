@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Offers = function () {
     return (
-        <div>
+        <div >
             <TitleDiv>
                 <h3>Principais Ofertas</h3>
                 <Link to="/subscribe">
@@ -14,12 +14,12 @@ const Offers = function () {
                     </SubsBtn>
                 </Link>
             </TitleDiv>
-            <MainDiv>
+            <MainDiv  >
                 {
                     Data.map(((product, index) => {
                         return (
-                            <Card key={product.name}>
-                                <img alt={product.price} src={product.img} />
+                            <Card  key={product.name}>
+                                <Img alt={product.price} src={product.img} />
                                 <p>{product.name}</p>
                                 <h4>R$ {product.price}</h4>
                             </Card>
@@ -33,6 +33,8 @@ const Offers = function () {
 
 const MainDiv = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    
 `
 
 const TitleDiv = styled.div`
@@ -48,7 +50,8 @@ const SubsBtn = styled.button`
 `
 
 const Card = styled.div`
-    width: 300px;
+    text-align: center;
+    width: 220px;
     cursor: pointer;
     border: 2px solid grey;
     border-radius: 10px;
@@ -58,6 +61,8 @@ const Card = styled.div`
         border: 2px solid red;
     }
 `
-
+const Img = styled.img`
+    width: 120px;
+`
 
 export default Offers

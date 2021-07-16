@@ -18,6 +18,16 @@ const Data = [
         name:"Samsung Galaxy M12   Smartphone Samsung Galaxy M12, equipado com C&aci..",
         price:"1.709,05",
         img: "https://images6.kabum.com.br/produtos/fotos/155486/smartphone-samsung-galaxy-m12-64gb-4gb-ram-octa-core-camera-quadrupla-5000mah-preto-sm-m127fzkszto_1622118086_m.jpg"
+    },
+    {
+        name:"Kit Livro Ecos Desencontros Capa Dura + Coletânea Ecos Primeiro, Segundo Ep..",
+        price:"1.299,00",
+        img:"https://images9.kabum.com.br/produtos/fotos/sync_mirakl/140409/Cadeira-Gamer-Elements-Veda-Ignis-Alto-Padr-o-Vermelha-e-Preta_1623269961_m.jpg"
+    },
+    {
+        name:"A Seagate traz mais de 20 anos de desempenho robusto e confiabilidade aos H..",
+        price:"413,90",
+        img:"https://images8.kabum.com.br/produtos/fotos/84108/84108_index_m.jpg"
     }
   
 ];
