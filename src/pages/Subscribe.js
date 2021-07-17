@@ -26,7 +26,7 @@ function Subscribe() {
            <input id="name" onChange={e=> setName(e.target.value)}/>
            </div>
            <div className="input-field col s6">
-           <label for="name">Email: : </label>
+           <label for="email">Email: : </label>
            <input type="email" id="email" onChange={e=> setEmail(e.target.value)}/>
            </div>
            <button 
