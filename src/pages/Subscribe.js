@@ -22,8 +22,8 @@ function Subscribe() {
         <MainDiv>
            <h2>Inscreva-se</h2> 
            <div className="input-field col s6">
-           <label for="name">Nome: </label>
-           <input id="name" onChange={e=> setName(e.target.value)}/>
+           <label for="nome">Nome: </label>
+           <input type="text" id="nome" onChange={e=> setName(e.target.value)}/>
            </div>
            <div className="input-field col s6">
            <label for="email">Email: : </label>
