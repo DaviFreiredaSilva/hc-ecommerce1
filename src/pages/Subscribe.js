@@ -1,14 +1,23 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
+import api from '../services/api'
 
 function Subscribe() {
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
 
-    var emailList = []
+    const [emailList, setEmailList] = useState([])
 
-    function subscribe(newName, newEmail){
+    useEffect(() => {
+        api.get('/emaillist').then(
+            response => {
+                setEmailList(response.data)
+            }
+        )
+    }, []);
+
+    function update(newName, newEmail){
 
         emailList.push({
         name: newName,
@@ -22,16 +31,16 @@ function Subscribe() {
         <MainDiv>
            <h2>Inscreva-se</h2> 
            <div className="input-field col s6">
-           <label for="nome">Nome: </label>
+           <label htmlFor="nome">Nome: </label>
            <input type="text" id="nome" onChange={e=> setName(e.target.value)}/>
            </div>
            <div className="input-field col s6">
-           <label for="email">Email: : </label>
+           <label htmlFor="email">Email: : </label>
            <input type="email" id="email" onChange={e=> setEmail(e.target.value)}/>
            </div>
            <button 
            className="btn"
-           onClick={()=> subscribe(name, email)}
+           onClick={()=> update(name, email)}
            >
            Inscrever
            </button>

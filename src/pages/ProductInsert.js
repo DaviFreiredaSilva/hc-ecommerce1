@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
+import api from '../services/api'
 
 function ProductInsert() {
 
@@ -7,36 +8,45 @@ function ProductInsert() {
     const [price, setPrice] = useState("")
     const [img, setImg] = useState("")
 
-    var products = []
+    const [products, setProducts] = useState([])
 
-    function subscribe(newName, newEmail){
+    useEffect(() => {
+        api.get('/emaillist').then(
+            response => {
+                setProducts(response.data)
+            }
+        )
+    }, []);
+
+    function update(newName, newEmail){
 
         products.push({
         name: newName,
         email:newEmail
         })
 
-        localStorage.setItem("cients", JSON.stringify(products));
+        localStorage.setItem("products", JSON.stringify(products));
     }
 
     return (
         <MainDiv>
+            {console.log(products)}
            <h2>Cadastro de produto</h2> 
            <div className="input-field col s6">
-           <label for="nome">Nome do produto: </label>
+           <label htmlFor="nome">Nome do produto: </label>
            <input type="text" id="nome" onChange={e=> setName(e.target.value)}/>
            </div>
            <div className="input-field col s6">
-           <label for="price">Preço: </label>
+           <label htmlFor="price">Preço: </label>
            <input type="text" id="price" onChange={e=> setPrice(e.target.value)}/>
            </div>
            <div className="input-field col s6">
-           <label for="img">Endereço da imagem: </label>
+           <label htmlFor="img">Endereço da imagem: </label>
            <input type="text" id="img" onChange={e=> setImg(e.target.value)}/>
            </div>
            <button 
            className="btn"
-           onClick={()=> subscribe(name, price, img)}
+           onClick={()=> update(name, price, img)}
            >
            Cadastrar
            </button>

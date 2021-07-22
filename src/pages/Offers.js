@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import Data from '../Data'
 import { Link } from 'react-router-dom'
+import api from '../services/api'
 
 const Offers = function () {
+
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        api.get('/products').then(
+            response => {
+                setProducts(response.data)
+            }
+        )
+    }, []);
+
     return (
         <div >
             <TitleDiv>
@@ -15,10 +26,11 @@ const Offers = function () {
                 </Link>
             </TitleDiv>
             <MainDiv  >
+
                 {
-                    Data.map(((product, index) => {
+                    products.map(((product) => {
                         return (
-                            <Card  key={product.name}>
+                            <Card key={product.name}>
                                 <Img alt={product.price} src={product.img} />
                                 <p>{product.name}</p>
                                 <h4>R$ {product.price}</h4>
