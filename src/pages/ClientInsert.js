@@ -20,11 +20,13 @@ function ClientInsert() {
         )
     }, []);
 
-    function update(newName, newEmail){
+    function update(newName, newEmail, newAddress, newPassword){
 
         clients.push({
         name: newName,
-        email:newEmail
+        email:newEmail,
+        address: newAddress,
+        password: newPassword
         })
 
         localStorage.setItem("clients", JSON.stringify(clients));
@@ -51,7 +53,7 @@ function ClientInsert() {
            </div>
            <button 
            className="btn"
-           onClick={()=> update(name, email)}
+           onClick={()=> update(name, email, address, password)}
            >
            Cadastrar
            </button>

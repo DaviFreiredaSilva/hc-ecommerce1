@@ -18,11 +18,12 @@ function ProductInsert() {
         )
     }, []);
 
-    function update(newName, newEmail){
+    function update(newName, newPrice, newImg){
 
         products.push({
         name: newName,
-        email:newEmail
+        price:newPrice,
+        img: newImg
         })
 
         localStorage.setItem("products", JSON.stringify(products));
