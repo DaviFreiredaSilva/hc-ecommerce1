@@ -56,6 +56,7 @@ const Card = styled.div`
     border: 2px solid grey;
     border-radius: 10px;
     margin: 20px;
+    padding: 10px;
 
     &:hover{
         border: 2px solid red;

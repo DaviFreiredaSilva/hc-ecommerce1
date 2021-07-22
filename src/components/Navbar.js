@@ -6,10 +6,11 @@ function Navbar() {
         <div>
         <nav>
         <div className="nav-wrapper indigo darken-4">
-          <Link to="/" className="brand-logo left blue-text">Hiring Coders STORE</Link>
+          <Link to="/" className="brand-logo left blue-text">HC STORE</Link>
           <ul id="nav-mobile" className="right hide-on-lg-and-down">
             <li><Link to="/">Promoções</Link></li>
-            <li><Link to="/subscribe">Cadastro</Link></li>
+            <li><Link to="/clientinsert">Cadastro de clientes</Link></li>
+            <li><Link to="/productinsert">Cadastro de produtos</Link></li>
           </ul>
         </div>
       </nav> 
