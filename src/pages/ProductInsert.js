@@ -1,37 +1,29 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
-import api from '../services/api'
+import {useHistory} from 'react-router-dom'
 
 function ProductInsert() {
+
+    const history = useHistory()
 
     const [name, setName] = useState("")
     const [price, setPrice] = useState("")
     const [img, setImg] = useState("")
 
-    const [products, setProducts] = useState([])
-
-    useEffect(() => {
-        api.get('/emaillist').then(
-            response => {
-                setProducts(response.data)
-            }
-        )
-    }, []);
-
-    function update(newName, newPrice, newImg){
-
-        products.push({
-        name: newName,
-        price:newPrice,
-        img: newImg
+       function update( ){
+        let newProducts = JSON.parse(localStorage.getItem('products'))
+        newProducts.push({
+            name: name,
+            price: price,
+            img:img
         })
+        localStorage.setItem("products", JSON.stringify(newProducts))
 
-        localStorage.setItem("products", JSON.stringify(products));
+        history.push('/')
     }
 
     return (
         <MainDiv>
-            {console.log(products)}
            <h2>Cadastro de produto</h2> 
            <div className="input-field col s6">
            <label htmlFor="nome">Nome do produto: </label>

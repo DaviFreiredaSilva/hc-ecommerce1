@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import api from '../services/api'
 
 const Offers = function () {
-
+    
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        api.get('/products').then(
-            response => {
-                setProducts(response.data)
-            }
-        )
+        setProducts(JSON.parse(localStorage.getItem('products' )))
     }, []);
+
+    
 
     return (
         <div >
@@ -34,6 +31,10 @@ const Offers = function () {
                                 <Img alt={product.price} src={product.img} />
                                 <p>{product.name}</p>
                                 <h4>R$ {product.price}</h4>
+                                <button 
+                                    className="btn waves-effect waves-light"
+                                    >Comprar
+                                </button>
                             </Card>
                         )
                     }))
@@ -46,12 +47,13 @@ const Offers = function () {
 const MainDiv = styled.div`
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     
 `
 
 const TitleDiv = styled.div`
     display: flex;
-
+    padding-left: 20px;
 `
 
 const SubsBtn = styled.button`

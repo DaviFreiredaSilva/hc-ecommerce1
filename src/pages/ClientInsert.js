@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
-import api from '../services/api'
 
 function ClientInsert() {
 
@@ -9,27 +8,19 @@ function ClientInsert() {
     const [address, setAddress] = useState("")
     const [password, setPassword] = useState("")
 
+    function update( ){
 
-    const [clients, setClients] = useState([])
-
-    useEffect(() => {
-        api.get('/clients').then(
-            response => {
-                setClients(response.data)
-            }
-        )
-    }, []);
-
-    function update(newName, newEmail, newAddress, newPassword){
-
-        clients.push({
-        name: newName,
-        email:newEmail,
-        address: newAddress,
-        password: newPassword
+        let newClients = JSON.parse(localStorage.getItem('clients'))
+        newClients.push({
+            name: name,
+            email: email,
+            address:address,
+            password: password
         })
+        localStorage.setItem("clients", JSON.stringify(newClients))
 
-        localStorage.setItem("clients", JSON.stringify(clients));
+
+       
     }
 
     return (

@@ -1,31 +1,20 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
-import api from '../services/api'
 
 function Subscribe() {
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
 
-    const [emailList, setEmailList] = useState([])
+   function update(){
 
-    useEffect(() => {
-        api.get('/emaillist').then(
-            response => {
-                setEmailList(response.data)
-            }
-        )
-    }, []);
-
-    function update(newName, newEmail){
-
-        emailList.push({
-        name: newName,
-        email:newEmail
-        })
-
-        localStorage.setItem("emailList", JSON.stringify(emailList));
-    }
+    let newEmaillist = JSON.parse(localStorage.getItem('emaillist'))
+    newEmaillist.push({
+        name: name,
+        email: email
+    })
+    localStorage.setItem("emaillist", JSON.stringify(newEmaillist))
+}
 
     return (
         <MainDiv>
