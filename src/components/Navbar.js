@@ -8,10 +8,10 @@ function Navbar() {
         <nav>
         <div className="nav-wrapper indigo darken-4">
           <Link to="/" className="brand-logo left blue-text">HC STORE</Link>
-          <ul id="dropdown1" className="right hide-on-lg-and-down">
-            <li><Link to="/">Promoções</Link></li>
-            <li><Link to="/clientinsert">Cadastro de clientes</Link></li>
-            <li><Link to="/productinsert">Cadastro de produtos</Link></li>
+          <ul className="right hide-on-lg-and-down">
+      
+            <li><Link to="/clientinsert">Clientes</Link></li>
+            <li><Link to="/productinsert">Podutos</Link></li>
           </ul>
         </div>
       </nav> 
